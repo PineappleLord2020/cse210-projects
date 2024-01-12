@@ -4,52 +4,42 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep2 World!");
-
-
-        //Primitive types
-        int i;
-        long l;
-        float f;
-        double d;
-        char c;
-        string s;
-        byte b;
-        bool b2;
-
-
-        //Variables
-        int myCount = 4;
-        string aName = "bob";
-
-
-        //var
-        var anotherCount = 4;
-
-        anotherCount = 3.4;
-
-
-        //Printing Variables
-        Console.Write("What's your age?");
-
-
-        //ReadLine
-        var ageString = Console.ReadLine();
-        System.Console.WriteLine($"My age is {ageString}.");
-        System.Console.WriteLine("My age is" + ageString + ".");
-
-
-        //Converting Variables
-        int age = int.Parse(ageString);
-
-        //Conditionals
-        if (age < 18){
-            System.Console.WriteLine("You're a minor");
-            System.Console.WriteLine("Another string to print");
+        System.Console.Write("What is your grade percentage? ");
+        string grade = Console.ReadLine();
+        int gradeNumber = int.Parse(grade);
+        string letter ="";
+        if (gradeNumber >= 90)
+        {
+            letter = "A";
+        }
+        else if (gradeNumber >= 80)
+        {
+            letter = "B";
+        }
+        else if (gradeNumber >= 70)
+        {
+            letter = "C";
+        }
+        else if (gradeNumber >= 60)
+        {
+            letter = "D";
+        }
+        else if (gradeNumber < 60)
+        {
+            letter = "F";
         }
         else
         {
-            System.Console.WriteLine("You're old");
+            System.Console.WriteLine("That number is not accepted");
+        }
+        System.Console.WriteLine($"Your grade is a(n) {letter}");
+        if (gradeNumber >= 70)
+        {
+            System.Console.WriteLine("Congratulations on passing the class");
+        }
+        else if (gradeNumber < 70)
+        {
+            System.Console.WriteLine("Better luck next time");
         }
     }
 }
