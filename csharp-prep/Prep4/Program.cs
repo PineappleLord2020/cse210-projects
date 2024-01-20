@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
 class Program
@@ -7,17 +9,37 @@ class Program
     {
         Console.WriteLine("Hello Prep4 World!");
 
-        List <int> myInts = new List<int>();
-        var otherInts = new List<int>();
+        List <int> numbers = new List<int>();
 
-        myInts.Add(10);
-        myInts.Add(3);
-        myInts.Add(45);
+        System.Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+        int userNumber = -1;
+        do{
+            System.Console.WriteLine("Enter number: ");
+            string userInput = Console.ReadLine();
+            userNumber = int.Parse(userInput);
 
-        for(var j=0; j<myInts.Count; ++j);
+            if (userNumber != 0){
+                numbers.Add(userNumber);
+            }
+        }while (userNumber != 0);
 
-        foreach(var n in myInts) {
-            System.Console.WriteLine($"n = {n}");
+        int sum = 0;
+        foreach (int number in numbers){
+            sum += number;
         }
+
+        System.Console.WriteLine($"The sum is {sum}");
+        
+        float average = ((float)sum) / numbers.Count;
+        System.Console.WriteLine($"The average is {average}");
+
+        int max = numbers[0];
+        foreach (int number in numbers){
+            if (number > max){
+                max = number;
+            }
+        }
+
+        System.Console.WriteLine($"The max number is {max}");
     }
 }
