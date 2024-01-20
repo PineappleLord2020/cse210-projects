@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+using System.Collections;
 
 class Program
 {
@@ -6,23 +8,40 @@ class Program
     {
         Console.WriteLine("Hello Prep5 World!");
 
-        int Add2(int number, string name) {
-            return number + 2;
+        DisplayWelcome();
+
+        string username = PromptUserName();
+        int userNumber = PromptUserNumber();
+
+        int squaredNumber = SquareNumber(userNumber);
+
+        DisplayResult(username, squaredNumber);
+
+        static void DisplayWelcome(){
+            System.Console.WriteLine("Welcome to the Program");
         }
 
-        void PrintNmae(string name) {
-            System.Console.WriteLine(name);
+        static string PromptUserName(){
+            System.Console.WriteLine("What is your name?");
+            string name = Console.ReadLine();
+            return name;
         }
 
-        int answer = Add2(10, "bob");
-        PrintNmae($"Bob is {answer}");
-
-        var i = 12;
-        {
-            var y = 10;
-            y = i + 3;
-            i = y + 4;
+        static int PromptUserNumber(){
+            int number = 0;
+            System.Console.WriteLine("What is your favorite number?");
+            string numberRead = Console.ReadLine();
+            number = int.Parse(numberRead);
+            return number;
         }
-        y = 3;
+
+        static int SquareNumber (int number){
+            int squared = number * number;
+            return squared;
+        }
+
+        static void DisplayResult (string username, int squaredNumber){
+            System.Console.WriteLine($"{username}, the square of your number is {squaredNumber}");
+        }
     }
 }
