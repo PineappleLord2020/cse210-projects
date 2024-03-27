@@ -9,7 +9,7 @@ public class Lecture: Events{
     }
 
     public override string EventDetails(){
-        return $"The speaker for this event is {speaker} \n Event Capacity: {capacity}";
+        return $"The speaker(s) for this event is/are {speaker} \n Event Capacity: {capacity}";
     }
 
     public override string EventType(){

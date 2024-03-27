@@ -1,7 +1,7 @@
 using System.Net;
 
 public class Reception: Events{
-    private string register = "reserveyourevent@gmail.com";
+    private string register;
     private string eventType = "Reception";
 
     public Reception(string eventTitle, string eventDescription, string date, string time, string eventAddress, string register): base(eventTitle, eventDescription, date, time, eventAddress){
