@@ -28,6 +28,7 @@ class Program
             foreach (var orderinfo in orders){
                 Console.WriteLine(orderinfo.ShippingLabel());
                 orderinfo.PackingLabel();
+                Console.WriteLine(orderinfo.TotalPrice());
                 Console.WriteLine();
             }
         }

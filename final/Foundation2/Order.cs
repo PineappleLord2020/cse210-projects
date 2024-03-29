@@ -12,14 +12,14 @@ public class Order {
     public int TotalCosts(){
         int totalPrice = 0;
         foreach (var product in products){
-                var price = product.GetPrice();
+                var price = product.QuantityPriceCaluclator();
                 totalPrice += price;
             }
         return totalPrice;
     }
 
     public int ShippingPrice(){
-        int price = 0;
+        int price = TotalCosts();
         if (customer.CountryName() == "USA"){
             int shippingPrice = 5;
             shippingPrice += price;
@@ -43,5 +43,11 @@ public class Order {
     public string ShippingLabel(){
         string shippingLabel = $"{customer.CustomerName()} \n {customer.Address()}";
         return shippingLabel;
+    }
+
+    public string TotalPrice(){
+        int finalPrice = ShippingPrice();
+        string priceSummary = $"Total Price: ${finalPrice}";
+        return priceSummary;
     }
 }
