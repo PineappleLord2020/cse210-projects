@@ -29,7 +29,7 @@ public class Swimming: Exercise{
     }
 
     public override string Summary(){
-      return $"{activityName} ({minutes} minutes) \n Distance: {DistanceCalculator()} miles \n Speed: {SpeedCalculator()} mph \n Pace: {PaceCalculator()} min per mile";
+      return $"{base.Summary()} {activityName} ({minutes} minutes) \n Distance: {DistanceCalculator()} miles \n Speed: {SpeedCalculator()} mph \n Pace: {PaceCalculator()} min per mile";
     }
 
 }

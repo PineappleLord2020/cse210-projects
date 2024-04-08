@@ -20,7 +20,7 @@ public class Cycling: Exercise{
     }
 
     public override string Summary(){
-      return $"{activityName} ({minutes} minutes) \n Distance: {distance} miles \n Speed: {SpeedCalculator()} mph \n Pace: {PaceCalculator()} min per mile";
+      return $"{base.Summary()} {activityName} ({minutes} minutes) \n Distance: {distance} miles \n Speed: {SpeedCalculator()} mph \n Pace: {PaceCalculator()} min per mile";
     }
 
 }
